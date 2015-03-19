@@ -3,9 +3,12 @@ package menu;
 import java.io.IOException;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import client.ServerCodes;
@@ -46,6 +49,9 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 	ScreensController mainController;
 	Calendar calendar = Calendar.getInstance();
 	Timeline fiveSecondsWonder;
+	
+	Timeline oneSecondsTimer;
+	
 	Date date = new Date();
 	
 	TCPClient client;
@@ -137,7 +143,10 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 	Label lblUser;
 	
 	@FXML
-	Button btnUpdate;
+	Label lblDate;
+	
+	@FXML
+	Label lblTime;
 	
 	long lastUpdatedTime = 0;
 	
@@ -147,6 +156,7 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 
 		    @Override
 		    public void handle(ActionEvent event) {
+		    	
 		    	
 		    	int newAppointmentsCount = getAppointmentsCount();
 		    	
@@ -203,10 +213,6 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 					btnUpdate.setVisible(true);
 					
 				} else {
-<<<<<<< HEAD
-=======
-
->>>>>>> 192258b2aad02c25bc52b288d1bba93dc3d629eb
 					btnUpdate.setVisible(false);
 				}*/
 		    }
@@ -214,6 +220,16 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 		fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
 		fiveSecondsWonder.play();
 		
+		oneSecondsTimer = new Timeline(new KeyFrame(Duration.seconds(0.5), new EventHandler<ActionEvent>() {
+
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	lblTime.setText(getTime());
+		    	
+		    }
+		}));
+		oneSecondsTimer.setCycleCount(Timeline.INDEFINITE);
+		oneSecondsTimer.play();
 		
 		/*timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
@@ -227,6 +243,26 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 	
 	private void endTimer() {
 		fiveSecondsWonder.stop();
+	}
+	
+	private String getDate() {
+		DateFormat df = new SimpleDateFormat("EEEE, dd/MM/yy", Locale.ENGLISH);
+	    String dato = df.format(date);
+		
+	    //System.out.println(df.format(date));
+		
+		return dato;
+	}
+	
+	private String getTime() {
+		Date date = new Date(); 
+		
+		DateFormat df = new SimpleDateFormat("HH:mm:ss");
+	    String dato = df.format(date);
+		
+	    //System.out.println(df.format(date));
+		
+		return dato;
 	}
 	
 	private int getAppointmentsCount() {
@@ -305,7 +341,8 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {		
-		btnUpdate.setVisible(false);
+		lblDate.setText(getDate());
+		lblTime.setText(getTime());
 		
 		try {
 			client = new TCPClient();
@@ -342,6 +379,7 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 		membersCount = getMembersCount();
 		
 		startTimer();
+		
 	}
 	
 	

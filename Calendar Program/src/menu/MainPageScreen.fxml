@@ -1,418 +1,739 @@
-<?xml version="1.0" encoding="UTF-8"?>
+package menu;
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+import java.io.IOException;
+import java.net.URL;
+import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
-<Pane fx:id="mainPane" onKeyPressed="#keyHandler" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.MainPageScreenController">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c7f2ff" height="1080.0" stroke="BLACK" strokeType="INSIDE" width="1920.0" />
-      <AnchorPane layoutX="103.0" layoutY="6.0" prefHeight="1068.0" prefWidth="1244.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="896.0" layoutX="146.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="979.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Rectangle>
-            <GridPane gridLinesVisible="true" layoutX="146.0" layoutY="133.0" prefHeight="896.0" prefWidth="979.0">
-               <children>
-                  <GridPane GridPane.rowIndex="1">
-                     <children>
-                        <Text fx:id="mondayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="mondayDate" layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane GridPane.rowIndex="2">
-                     <children>
-                        <Text fx:id="tuesdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="tuesdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TUESDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane GridPane.rowIndex="3">
-                     <children>
-                        <Text fx:id="wednesdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WEDNESDAY" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="wednesdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane GridPane.rowIndex="4">
-                     <children>
-                        <Text fx:id="thursdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="thursdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="THURSDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane layoutX="10.0" layoutY="451.0" GridPane.rowIndex="5">
-                     <children>
-                        <Text fx:id="fridayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="239.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FRIDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="fridayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane layoutX="10.0" layoutY="598.0" GridPane.rowIndex="6">
-                     <children>
-                        <Text fx:id="saturdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SATURDAY" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="saturdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <GridPane layoutX="10.0" layoutY="745.0" GridPane.rowIndex="7">
-                     <children>
-                        <Text fx:id="sundayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
-                           <font>
-                              <Font name="System Bold" size="54.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SUNDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="sundayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="4">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Text>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
-                  <TableView fx:id="headerRow" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" />
-                  <TableView fx:id="mondayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TableView fx:id="tuesdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TableView fx:id="wednesdayTable" layoutX="270.0" layoutY="138.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TableView fx:id="thursdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TableView fx:id="fridayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TableView fx:id="saturdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TableView fx:id="sundayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-               </children>
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="148.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="403.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="214.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-            </GridPane>
-            <AnchorPane layoutX="146.0" layoutY="-20.0" prefHeight="80.0" prefWidth="429.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="89.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="979.0">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Rectangle>
-                  <Text fill="WHITE" layoutX="272.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEEK       (         )" textAlignment="CENTER" wrappingWidth="455.0">
-                     <font>
-                        <Font name="System Bold" size="54.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="weekNumber" fill="WHITE" layoutX="419.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="139.0">
-                     <font>
-                        <Font name="System Bold" size="54.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="year" fill="WHITE" layoutX="556.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="????" textAlignment="CENTER" wrappingWidth="139.0">
-                     <font>
-                        <Font name="System Bold" size="54.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <ImageView fitHeight="106.0" fitWidth="150.0" layoutX="1130.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <image>
-                  <Image url="@../resources/Weektemplate-arrow.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="106.0" fitWidth="150.0" layoutX="33.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-               <image>
-                  <Image url="@../resources/Weektemplate-arrow.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="295.0" layoutX="1391.0" layoutY="185.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#868686" height="60.0" layoutX="1390.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Label fx:id="lblUser" alignment="CENTER" layoutX="1394.0" layoutY="58.0" prefHeight="44.0" prefWidth="349.0" text="{ USER }" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1391.0" layoutY="130.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Label alignment="CENTER" layoutX="1392.0" layoutY="137.0" prefHeight="44.0" prefWidth="359.0" text="SYSTEM INFO" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1392.0" layoutY="509.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Label layoutX="1430.0" layoutY="515.0" text="APPOINTMENTS" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="83.0" layoutX="1392.0" layoutY="568.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="171.0" layoutX="1392.0" layoutY="738.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1392.0" layoutY="679.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Rectangle>
-      <Label layoutX="1495.0" layoutY="686.0" text="GROUPS" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Button fx:id="createAppointmentButton" layoutX="1416.0" layoutY="581.0" mnemonicParsing="false" onAction="#handleCreateAppointmentButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #00b903;" text="CREATE APPOINTMENT" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="viewGroupsButton" layoutX="1415.0" layoutY="832.0" mnemonicParsing="false" onAction="#handleViewGroupsButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #69696b;" text="VIEW GROUPS" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="createGroupButton" layoutX="1416.0" layoutY="759.0" mnemonicParsing="false" onAction="#handleCreateGroupButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #00b903;" text="CREATE GROUP" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="signOutButton" layoutX="1392.0" layoutY="934.0" mnemonicParsing="false" onAction="#handleSignOutButtonAction" prefHeight="91.0" prefWidth="359.0" style="-fx-background-color: #ef0000;" text="SIGN OUT" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="42.0" />
-         </font>
-      </Button>
-      <Button fx:id="previousWeekButton2" layoutX="143.0" layoutY="545.0" mnemonicParsing="false" onAction="#handlePreviousWeekButton" opacity="0.0" prefHeight="83.0" prefWidth="94.0" text="Button" />
-      <Button fx:id="nextWeekButton2" layoutX="1240.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleNextWeekButton" opacity="0.0" prefHeight="83.0" prefWidth="94.0" text="Button" />
-      <Label layoutX="1465.0" layoutY="213.0" prefHeight="36.0" prefWidth="277.0" text="new appointment(s)">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnUpdate" layoutX="1414.0" layoutY="407.0" mnemonicParsing="false" onAction="#updateButtonPressed" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #69696b;" text="UPDATE" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
-      <Label fx:id="lblAppointmentsCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="213.0" prefHeight="36.0" prefWidth="52.0" text="0">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblGroupsCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="272.0" prefHeight="36.0" prefWidth="52.0" text="0">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="1465.0" layoutY="272.0" prefHeight="36.0" prefWidth="277.0" text="new group(s)">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="1465.0" layoutY="334.0" prefHeight="36.0" prefWidth="277.0" text="new member(s)">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblMembersCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="334.0" prefHeight="36.0" prefWidth="52.0" text="0">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-   </children>
-   <padding>
-      <Insets top="-1000.0" />
-   </padding>
-</Pane>
+import client.ServerCodes;
+import client.TCPClient;
+import appointment.AppointmentModel;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
+import json.JsonArray;
+import json.JsonValue;
+import program.ControllerInterface;
+import program.Main;
+import program.ScreensController;
+
+
+public class MainPageScreenController implements Initializable, ControllerInterface {
+	
+	ScreensController mainController;
+	Calendar calendar = Calendar.getInstance();
+	Timeline fiveSecondsWonder;
+	
+	Timeline oneSecondsTimer;
+	
+	Date date = new Date();
+	
+	TCPClient client;
+	
+	private ObservableList<AppointmentModel> observableAppointments = FXCollections.observableArrayList();
+	private ArrayList<ArrayList<Integer>> attendingAndAdminList;
+	
+	@FXML
+	Pane mainPane;
+	
+	@FXML
+	Button previousWeekButton2;
+	@FXML
+	Button nextWeekButton2;
+	
+	@FXML
+	Text year;
+	@FXML
+	Text weekNumber;
+	@FXML
+	Text mondayDate;
+	@FXML
+	Text mondayMonth;
+	@FXML
+	Text tuesdayDate;
+	@FXML
+	Text tuesdayMonth;
+	@FXML
+	Text wednesdayDate;
+	@FXML
+	Text wednesdayMonth;
+	@FXML
+	Text thursdayDate;
+	@FXML
+	Text thursdayMonth;
+	@FXML
+	Text fridayDate;
+	@FXML
+	Text fridayMonth;
+	@FXML
+	Text saturdayDate;
+	@FXML
+	Text saturdayMonth;
+	@FXML
+	Text sundayDate;
+	@FXML
+	Text sundayMonth;
+	
+	@FXML
+	Button createAppointmentButton;
+	
+	@FXML
+	Button viewGroupsButton;
+	
+	@FXML
+	TableView<AppointmentModel> headerRow;
+	@FXML
+	TableView<AppointmentModel> mondayTable;
+	@FXML
+	TableView<AppointmentModel> tuesdayTable;
+	@FXML
+	TableView<AppointmentModel> wednesdayTable;
+	@FXML
+	TableView<AppointmentModel> thursdayTable;
+	@FXML
+	TableView<AppointmentModel> fridayTable;
+	@FXML
+	TableView<AppointmentModel> saturdayTable;
+	@FXML
+	TableView<AppointmentModel> sundayTable;
+	
+	
+	@FXML
+	Label lblAppointmentsCount;
+	
+	int appointmentsCount = 0;
+	
+	@FXML
+	Label lblGroupsCount;
+	
+	int groupsCount = 0;
+	
+	@FXML
+	Label lblMembersCount;
+	
+	int membersCount = 0;
+	
+	@FXML
+	Label lblUser;
+	
+	@FXML
+	Label lblDate;
+	
+	@FXML
+	Label lblTime;
+	
+	long lastUpdatedTime = 0;
+	
+	private void startTimer() {
+
+		fiveSecondsWonder = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	
+		    	
+		    	int newAppointmentsCount = getAppointmentsCount();
+		    	
+		    	if (appointmentsCount < newAppointmentsCount) {
+		    		int countDiff = (newAppointmentsCount - appointmentsCount);
+		    		
+		    		lblAppointmentsCount.setText(Integer.toString(countDiff));
+		    		
+		    		//appointmentsCount = newAppointmentsCount;
+		    	}
+		    	
+		    	int newGroupsCount = getGroupsCount();
+		    	System.out.println("groupsCount: " + groupsCount + ", newGroupsCount: " + newGroupsCount);
+		    	if (groupsCount < newGroupsCount) {
+		    		int countDiff2 = (newGroupsCount - groupsCount);
+		    		
+		    		lblGroupsCount.setText(Integer.toString(countDiff2));
+		    		
+		    		//groupsCount = newGroupsCount;
+		    	}
+		    	
+		    	
+		    	int newMembersCount = getMembersCount();
+		    	
+		    	if (membersCount < newMembersCount) {
+		    		int countDiff3 = (newMembersCount - membersCount);
+		    		
+		    		lblMembersCount.setText(Integer.toString(countDiff3));
+		    		
+		    		//membersCount = newMembersCount;
+		    	}
+		    	
+		    	 
+		    	/*long timeMilli = date.getTime();
+				  
+				String serverReply = "";
+				
+				try {
+					serverReply = client.customQuery(ServerCodes.GetUpdateStatus, "" + timeMilli);
+				
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				String[] answer= serverReply.split("#");
+				
+				JsonArray jsonArray = JsonArray.readFrom( answer[1] );
+				
+				String didChange = jsonArray.get(0).asObject().get( "didChange" ).asString();
+				  
+				if (didChange.equals("Yes")) {
+					System.out.println("Data har blitt oppdatert!");
+					
+					btnUpdate.setVisible(true);
+					
+				} else {
+					btnUpdate.setVisible(false);
+				}*/
+		    }
+		}));
+		fiveSecondsWonder.setCycleCount(Timeline.INDEFINITE);
+		fiveSecondsWonder.play();
+		
+		oneSecondsTimer = new Timeline(new KeyFrame(Duration.seconds(0.5), new EventHandler<ActionEvent>() {
+
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	lblTime.setText(getTime());
+		    	
+		    }
+		}));
+		oneSecondsTimer.setCycleCount(Timeline.INDEFINITE);
+		oneSecondsTimer.play();
+		
+		/*timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				  
+				
+			    
+			}
+		}, 5000, 5000);*/
+	}
+	
+	private void endTimer() {
+		fiveSecondsWonder.stop();
+	}
+	
+	private String getDate() {
+		DateFormat df = new SimpleDateFormat("EEEE, dd/MM/yy", Locale.ENGLISH);
+	    String dato = df.format(date);
+		
+	    //System.out.println(df.format(date));
+		
+		return dato;
+	}
+	
+	private String getTime() {
+		Date date = new Date(); 
+		
+		DateFormat df = new SimpleDateFormat("HH:mm:ss");
+	    String dato = df.format(date);
+		
+	    //System.out.println(df.format(date));
+		
+		return dato;
+	}
+	
+	private int getAppointmentsCount() {
+		String serverReply = "";
+		
+		try {
+			serverReply = client.customQuery(ServerCodes.GetAppointmentsCount, "'None'");
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		String[] answer= serverReply.split("#");
+		
+		JsonArray jsonArray = JsonArray.readFrom( answer[1] );
+		
+		int appointmentsCount = jsonArray.get(0).asObject().get( "count(avtaleID)" ).asInt();
+		
+		return appointmentsCount;
+	}
+	
+	private int getGroupsCount() {
+		String serverReply = "";
+		
+		try {
+			serverReply = client.customQuery(ServerCodes.GetGroupsCount, "'None'");
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		String[] answer= serverReply.split("#");
+		
+		JsonArray jsonArray = JsonArray.readFrom( answer[1] );
+		
+		int groupsCount = jsonArray.get(0).asObject().get( "count(gruppeID)" ).asInt();
+		
+		return groupsCount;
+	}
+	
+	private int getMembersCount() {
+		String serverReply = "";
+		
+		try {
+			serverReply = client.customQuery(ServerCodes.GetMembersCount, "'None'");
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+		}
+		String[] answer= serverReply.split("#");
+		
+		JsonArray jsonArray = JsonArray.readFrom( answer[1] );
+		
+		int membersCount = jsonArray.get(0).asObject().get( "count(brukerID)" ).asInt();
+		
+		return membersCount;
+	}
+	
+	
+	@Override
+	public void setScreenParent(ScreensController screenParent) {
+		mainController = screenParent;	
+	}
+	
+	@FXML
+	public void updateButtonPressed(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		mainController.setScreen(Main.mainPageID, Main.mainPageScreen);
+	}
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {		
+		lblDate.setText(getDate());
+		lblTime.setText(getTime());
+		
+		try {
+			client = new TCPClient();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		mainPane.setFocusTraversable(true);
+		headerRow.getStylesheets().addAll(getClass().getResource("/css/show-tableview-header.css").toExternalForm());
+		mondayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		tuesdayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		wednesdayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		thursdayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		fridayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		saturdayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		sundayTable.getStylesheets().addAll(getClass().getResource("/css/hide-tableview-header.css").toExternalForm());
+		try {
+			tableViewFiller(headerRow);
+			weekFiller(calendar, 0);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		lblUser.setText(ScreensController.getUser().getName());
+		
+		
+		appointmentsCount = getAppointmentsCount();
+		groupsCount = getGroupsCount();
+		membersCount = getMembersCount();
+		
+		startTimer();
+		
+	}
+	
+	
+	private void weekFiller(Calendar calendar, int increment) throws IOException {
+		int counter = 0;
+		if (increment == 0) {
+			calendar.set(Calendar.DAY_OF_WEEK, calendar.getFirstDayOfWeek());
+			weekNumber.setText(Integer.toString(calendar.get(Calendar.WEEK_OF_YEAR)));
+			this.year.setText(Integer.toString(calendar.get(Calendar.YEAR)));
+		}
+		else if (increment == 1) {
+			weekNumber.setText(Integer.toString(calendar.get(Calendar.WEEK_OF_YEAR)));
+			this.year.setText(Integer.toString(calendar.get(Calendar.YEAR)));
+		}
+		else if (increment == -1) {
+			calendar.add(Calendar.WEEK_OF_YEAR, increment-1);
+			weekNumber.setText(Integer.toString(calendar.get(Calendar.WEEK_OF_YEAR)));
+			this.year.setText(Integer.toString(calendar.get(Calendar.YEAR)));
+		}
+		getAppointmentData();
+		while (counter < 7) {
+			if (counter == 0) {
+				mondayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				mondayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(mondayTable);
+			}
+			else if (counter == 1) {
+				tuesdayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				tuesdayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(tuesdayTable);
+			}
+			else if (counter == 2) {
+				wednesdayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				wednesdayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(wednesdayTable);
+			}
+			else if (counter == 3) {
+				thursdayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				thursdayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(thursdayTable);
+			}
+			else if (counter == 4) {
+				fridayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				fridayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(fridayTable);
+			}
+			else if (counter == 5) {
+				saturdayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				saturdayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(saturdayTable);
+			}
+			else if (counter == 6) {
+				sundayDate.setText(Integer.toString(calendar.get(Calendar.DATE)));
+				sundayMonth.setText(getMonthFromInt(calendar.get(Calendar.MONTH)));
+				tableViewFiller(sundayTable);
+			}
+			if (calendar.get(Calendar.DATE) == calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+				if (calendar.get(Calendar.MONTH) == calendar.getActualMaximum(Calendar.MONTH)) {
+					calendar.add(Calendar.YEAR, 1);
+					calendar.set(Calendar.MONTH, 0);
+				}
+				else {
+					calendar.add(Calendar.MONTH, 1);
+				}
+				calendar.set(Calendar.DATE, 1);
+			}
+			else {
+				calendar.add(Calendar.DATE, 1);
+			}
+			counter++;
+		}
+	}
+	
+	
+	private static String getMonthFromInt(int month) {
+		String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+		return monthNames[month];
+	}
+	
+	
+	private void getAppointmentData() throws IOException {
+		observableAppointments.clear();
+		
+		String serverReply = client.customQuery(ServerCodes.GetAppointments, ScreensController.getUser().getUserID() + ", " + dateForAWeekMaker());
+		String[] answer = serverReply.split("#");
+
+		JsonArray jsonArray = JsonArray.readFrom( answer[1] );
+
+		try {
+			for( JsonValue value : jsonArray ) {
+				int appointmentID = value.asObject().get( "avtaleID" ).asInt();
+				String title = value.asObject().get( "navn" ).asString();
+				String purpose = value.asObject().get( "beskrivelse" ).asString();
+				String place = value.asObject().get( "sted" ).asString();
+				int roomID = value.asObject().get( "moteromID" ).asInt();
+				long startDate = value.asObject().get( "start" ).asLong();
+				long endDate = value.asObject().get( "slutt" ).asLong();
+				
+				appointmentCreator(appointmentID, title, purpose, place, roomID, startDate, endDate);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		attendingAndAdminList = new ArrayList<ArrayList<Integer>>();
+		
+		String serverReply2 = client.customQuery(ServerCodes.GetAllAppointmentsForAdmin, Integer.toString(ScreensController.getUser().getUserID()));
+		String[] answer2 = serverReply2.split("#");
+		
+		JsonArray jsonArray2 = JsonArray.readFrom( answer2[1] );
+		
+		try {
+			for (JsonValue value : jsonArray2) {
+				int appointmentID = value.asObject().get( "avtaleID" ).asInt();
+				int admin = value.asObject().get( "admin" ).asInt();
+				int deltar = value.asObject().get( "deltar" ).asInt();
+				ArrayList<Integer> list = new ArrayList<Integer>();
+				list.add(appointmentID);
+				list.add(admin);
+				list.add(deltar);
+				attendingAndAdminList.add(list);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private String dateForAWeekMaker() {
+		String startDate = "";
+		String endDate = "";
+		startDate += calendar.get(Calendar.YEAR);
+		if (calendar.get(Calendar.MONTH)+1 < 10) {
+			startDate += 0;
+			startDate += calendar.get(Calendar.MONTH)+1;
+		}
+		else {
+			startDate+= calendar.get(Calendar.MONTH)+1;
+		}
+		if (calendar.get(Calendar.DATE) < 10) {
+			startDate += 0;
+			startDate += calendar.get(Calendar.DATE);
+		}
+		else {
+			startDate += calendar.get(Calendar.DATE);
+		}
+		for (int i = 0; i < 4; i++) {
+			startDate += 0;
+		}
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int date = calendar.get(Calendar.DATE);
+		int counter = 0;
+		while (counter < 7) {
+			if (calendar.get(Calendar.DATE) == calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+				if (calendar.get(Calendar.MONTH) == calendar.getActualMaximum(Calendar.MONTH)) {
+					calendar.add(Calendar.YEAR, 1);
+					calendar.set(Calendar.MONTH, 0);
+				}
+				else {
+					calendar.add(Calendar.MONTH, 1);
+				}
+				calendar.set(Calendar.DATE, 1);
+			}
+			else {
+				calendar.add(Calendar.DATE, 1);
+			}
+			counter++;
+		}
+		endDate += calendar.get(Calendar.YEAR);
+		if (calendar.get(Calendar.MONTH)+1 < 10) {
+			endDate += 0;
+			endDate += calendar.get(Calendar.MONTH)+1;
+		}
+		else {
+			endDate+= calendar.get(Calendar.MONTH)+1;
+		}
+		if (calendar.get(Calendar.DATE) < 10) {
+			endDate += 0;
+			endDate += calendar.get(Calendar.DATE);
+		}
+		else {
+			endDate += calendar.get(Calendar.DATE);
+		}
+		for (int i = 0; i < 4; i++) {
+			endDate += 0;
+		}
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.DATE, date);
+		
+		return startDate + ", " + endDate;
+	}
+	
+	
+	private void appointmentCreator(int appointmentID, String title, String purpose, String roomName, int roomID, Long startDate, Long endDate) {
+		observableAppointments.add(new AppointmentModel(appointmentID, title, purpose, roomName, roomID, startDate, endDate));
+	}
+	
+	
+	private ObservableList<AppointmentModel> dayAppointmentFiller(ObservableList<AppointmentModel> observableAppointments, Calendar calendar) {
+		ObservableList<AppointmentModel> dayAppointments = FXCollections.observableArrayList();
+		for (AppointmentModel appointment : observableAppointments) {
+			if (appointment.getYear() == calendar.get(Calendar.YEAR) && appointment.getMonth()-1 == calendar.get(Calendar.MONTH) && appointment.getDay() == calendar.get(Calendar.DATE)) {
+				dayAppointments.add(appointment);
+			}
+		}
+		return dayAppointments;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	private void rowStyleSetter(TableView<AppointmentModel> tableView) {
+		for (Node n : tableView.lookupAll("TableRow")) {
+			if (n instanceof TableRow) {
+				if (!((TableRow<AppointmentModel>) n).isEmpty()) {
+					TableRow<AppointmentModel> row = (TableRow<AppointmentModel>) n;
+					for (int i = 0; i < attendingAndAdminList.size(); i++) {
+						if (row.getItem().getAppointmentID() == attendingAndAdminList.get(i).get(0)) {
+							if (attendingAndAdminList.get(i).get(1) == 1) {								
+								row.setStyle("-fx-background-color: skyblue; -fx-accent: derive(-fx-control-inner-background, -40%); -fx-cell-hover-color: derive(-fx-control-inner-background, -40%);");						
+							}
+							else {
+								if (attendingAndAdminList.get(i).get(2) == 0) {
+									row.setStyle("");
+								}
+								else if (attendingAndAdminList.get(i).get(2) == 2) {
+									row.setStyle("-fx-background-color: #ffbbbb; -fx-accent: derive(-fx-control-inner-background, -40%); -fx-cell-hover-color: derive(-fx-control-inner-background, -40%);");						
+								}
+								else if (attendingAndAdminList.get(i).get(2) == 1) {
+									row.setStyle("-fx-background-color: palegreen; -fx-accent: derive(-fx-control-inner-background, -40%); -fx-cell-hover-color: derive(-fx-control-inner-background, -40%);");														
+								}								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	private TableColumn<AppointmentModel, String> tableColumnStringSpecifier(String name, String variable) {
+		TableColumn<AppointmentModel, String> tableColumn = new TableColumn<AppointmentModel, String>(name);
+		tableColumn.setCellValueFactory(new PropertyValueFactory<AppointmentModel, String>(variable));
+		tableColumn.setSortable(false);
+		return tableColumn;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	private void tableViewFiller(TableView<AppointmentModel> tableView) throws IOException {
+		tableView.getColumns().clear();
+		Label emptyLabel = new Label("There are no appointments on this day!");
+		tableView.setPlaceholder(emptyLabel);
+		tableView.setItems(dayAppointmentFiller(observableAppointments, calendar));
+		tableView.getColumns().addAll(tableColumnStringSpecifier("Start", "startTime"), tableColumnStringSpecifier("Title", "title"), tableColumnStringSpecifier("Place", "place"));
+		tableView.getColumns().get(0).setSortable(true);
+		tableView.getSortOrder().add(tableView.getColumns().get(0));
+ 		tableView.getColumns().get(1).setPrefWidth(340);
+ 		tableView.getColumns().get(2).setPrefWidth(167);
+ 		tableView.getColumns().get(1).setResizable(false);
+ 		tableView.getColumns().get(2).setResizable(false);
+ 		tableView.getColumns().get(0).setSortable(false);
+	    Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                rowStyleSetter(tableView);
+            }
+	    });
+ 		tableView.setOnMousePressed(new EventHandler<MouseEvent>() {
+ 		    @Override 
+ 		    public void handle(MouseEvent event) {
+ 		        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+ 		            Node node = ((Node) event.getTarget()).getParent();
+ 		            TableRow<AppointmentModel> row;
+ 		            if (node instanceof TableRow) {
+ 		                row = (TableRow<AppointmentModel>) node;
+ 		            } else {
+ 		                row = (TableRow<AppointmentModel>) node.getParent();
+ 		            }
+ 		            ScreensController.setAppointment(row.getItem());
+ 		            try {
+ 		            	endTimer();
+ 		            	mainController.setScreen(Main.appointmentStatusID, Main.appointmentStatusScreen);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+ 		        }
+ 		    }
+ 		});
+	}
+	
+	
+	@FXML
+	public void keyHandler(KeyEvent event) throws IOException {
+		KeyCode code = event.getCode();
+        if(code.toString() == "LEFT" || code.toString() == "DOWN"){
+        	weekFiller(calendar, -1);
+        	lastUpdatedTime = date.getTime();
+		}else if(code.toString() == "RIGHT" || code.toString() == "UP"){
+			weekFiller(calendar, 1);
+			lastUpdatedTime = date.getTime();
+		}else if(code.toString() == "ESCAPE"){
+			lastUpdatedTime = date.getTime();
+			endTimer();
+			mainController.setScreen(Main.loginID, Main.loginScreen);
+		}else{
+			event.consume();
+		}
+	}
+	
+
+	@FXML
+	public void handleNextWeekButton(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		weekFiller(calendar, 1);
+	}
+	
+	
+	@FXML
+	public void handlePreviousWeekButton(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		weekFiller(calendar, -1);
+	}
+	
+	
+	@FXML
+	public void handleCreateAppointmentButtonAction(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		endTimer();
+		mainController.setScreen(program.Main.appointmentID, Main.appointmentScreen);
+	}
+	
+	
+	@FXML
+	public void handleCreateGroupButtonAction(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		endTimer();
+		mainController.setScreen(Main.groupID, Main.groupScreen);
+	}
+	
+	
+	@FXML
+	public void handleViewGroupsButtonAction(ActionEvent event) throws IOException {
+		lastUpdatedTime = date.getTime();
+		endTimer();
+		mainController.setScreen(Main.viewGroupsID, Main.viewGroupsScreen);
+	}
+	
+	
+	@FXML
+	public void handleSignOutButtonAction(ActionEvent event) throws IOException{
+		lastUpdatedTime = date.getTime();
+		endTimer();
+		mainController.setScreen(Main.loginID, Main.loginScreen);
+	}
+}
