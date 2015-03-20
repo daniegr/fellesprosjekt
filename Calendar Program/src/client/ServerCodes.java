@@ -21,7 +21,8 @@ public final class ServerCodes {
  	
  	// Rooms
  	public static final String GetFilteredRooms     		= "h4ks827db5kz791ke2n5";
- 	
+	public static final String GetRoomWithID     			= "k39sh21sk97dhek8usya";
+	
  	// Appointments
  	public static final String CreateAppointment    		= "a92mfdy37sk9senc7smw";
  	public static final String GetAppointments  			= "f2ks94lfurb68z52k9ah";
@@ -40,5 +41,8 @@ public final class ServerCodes {
  	public static final String GetGroupsCount		 		= "b37chw89sk3gy2nfy7i6";
  	public static final String GetMembersCount		 		= "c3b8kam28duh3j7cg4n7";
  	
+ 	//Forgot password
+ 	public static final String GetUserWithEmail 			= "j3usge51j7s68luc62net";
+ 	public static final String SendPassword 				= "n3hs7xk489fjaqi3nf6h";
 }
 

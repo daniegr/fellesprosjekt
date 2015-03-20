@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+<<<<<<< HEAD
 import client.ServerCodes;
 import client.TCPClient;
 import appointment.AppointmentModel;
@@ -737,3 +738,420 @@ public class MainPageScreenController implements Initializable, ControllerInterf
 		mainController.setScreen(Main.loginID, Main.loginScreen);
 	}
 }
+=======
+<Pane fx:id="mainPane" onKeyPressed="#keyHandler" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.MainPageScreenController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c7f2ff" height="1080.0" stroke="BLACK" strokeType="INSIDE" width="1920.0" />
+      <AnchorPane layoutX="103.0" layoutY="6.0" prefHeight="1068.0" prefWidth="1244.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="896.0" layoutX="146.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" width="979.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Rectangle>
+            <GridPane gridLinesVisible="true" layoutX="146.0" layoutY="133.0" prefHeight="896.0" prefWidth="979.0">
+               <children>
+                  <GridPane GridPane.rowIndex="1">
+                     <children>
+                        <Text fx:id="mondayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="mondayDate" layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="2">
+                     <children>
+                        <Text fx:id="tuesdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="tuesdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TUESDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="3">
+                     <children>
+                        <Text fx:id="wednesdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WEDNESDAY" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="wednesdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="4">
+                     <children>
+                        <Text fx:id="thursdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="thursdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="THURSDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane layoutX="10.0" layoutY="451.0" GridPane.rowIndex="5">
+                     <children>
+                        <Text fx:id="fridayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="239.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FRIDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="fridayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane layoutX="10.0" layoutY="598.0" GridPane.rowIndex="6">
+                     <children>
+                        <Text fx:id="saturdayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SATURDAY" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="saturdayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane layoutX="10.0" layoutY="745.0" GridPane.rowIndex="7">
+                     <children>
+                        <Text fx:id="sundayDate" strokeType="OUTSIDE" strokeWidth="0.0" text="??" textAlignment="CENTER" wrappingWidth="240.205078125" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="54.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SUNDAY" textAlignment="CENTER" wrappingWidth="241.205078125" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="sundayMonth" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTH" textAlignment="CENTER" wrappingWidth="242.205078125" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <TableView fx:id="headerRow" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" />
+                  <TableView fx:id="mondayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TableView fx:id="tuesdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TableView fx:id="wednesdayTable" layoutX="270.0" layoutY="138.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TableView fx:id="thursdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TableView fx:id="fridayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TableView fx:id="saturdayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TableView fx:id="sundayTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="148.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="403.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="214.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <AnchorPane layoutX="146.0" layoutY="-20.0" prefHeight="80.0" prefWidth="429.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="89.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="979.0">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Rectangle>
+                  <Text fill="WHITE" layoutX="272.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WEEK       (         )" textAlignment="CENTER" wrappingWidth="455.0">
+                     <font>
+                        <Font name="System Bold" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="weekNumber" fill="WHITE" layoutX="419.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="?" textAlignment="CENTER" wrappingWidth="139.0">
+                     <font>
+                        <Font name="System Bold" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="year" fill="WHITE" layoutX="556.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="????" textAlignment="CENTER" wrappingWidth="139.0">
+                     <font>
+                        <Font name="System Bold" size="54.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="106.0" fitWidth="150.0" layoutX="1130.0" layoutY="529.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <image>
+                  <Image url="@../resources/Weektemplate-arrow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="106.0" fitWidth="150.0" layoutX="33.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <image>
+                  <Image url="@../resources/Weektemplate-arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="183.0" layoutX="1391.0" layoutY="295.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1391.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label alignment="CENTER" layoutX="1392.0" layoutY="247.0" prefHeight="44.0" prefWidth="359.0" text="SYSTEM INFO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1392.0" layoutY="509.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label layoutX="1430.0" layoutY="515.0" text="APPOINTMENTS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="83.0" layoutX="1392.0" layoutY="568.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="171.0" layoutX="1392.0" layoutY="738.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#34a6cf" height="60.0" layoutX="1392.0" layoutY="679.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label layoutX="1495.0" layoutY="686.0" text="GROUPS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="createAppointmentButton" layoutX="1416.0" layoutY="581.0" mnemonicParsing="false" onAction="#handleCreateAppointmentButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #00b903;" text="CREATE APPOINTMENT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="viewGroupsButton" layoutX="1415.0" layoutY="832.0" mnemonicParsing="false" onAction="#handleViewGroupsButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #69696b;" text="VIEW GROUPS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="createGroupButton" layoutX="1416.0" layoutY="759.0" mnemonicParsing="false" onAction="#handleCreateGroupButtonAction" prefHeight="53.0" prefWidth="311.0" style="-fx-background-color: #00b903;" text="CREATE GROUP" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="signOutButton" layoutX="1392.0" layoutY="934.0" mnemonicParsing="false" onAction="#handleSignOutButtonAction" prefHeight="91.0" prefWidth="359.0" style="-fx-background-color: #ef0000;" text="SIGN OUT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Button>
+      <Button fx:id="previousWeekButton2" layoutX="143.0" layoutY="545.0" mnemonicParsing="false" onAction="#handlePreviousWeekButton" opacity="0.0" prefHeight="83.0" prefWidth="94.0" text="Button" />
+      <Button fx:id="nextWeekButton2" layoutX="1240.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleNextWeekButton" opacity="0.0" prefHeight="83.0" prefWidth="94.0" text="Button" />
+      <Label layoutX="1465.0" layoutY="323.0" prefHeight="36.0" prefWidth="277.0" text="new appointment(s)">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAppointmentsCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="323.0" prefHeight="36.0" prefWidth="52.0" text="0">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblGroupsCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="372.0" prefHeight="36.0" prefWidth="52.0" text="0">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="1465.0" layoutY="372.0" prefHeight="36.0" prefWidth="277.0" text="new group(s)">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="1465.0" layoutY="419.0" prefHeight="36.0" prefWidth="277.0" text="new member(s)">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMembersCount" alignment="CENTER_RIGHT" layoutX="1401.0" layoutY="419.0" prefHeight="36.0" prefWidth="52.0" text="0">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="100.0" layoutX="1391.0" layoutY="108.0" stroke="BLACK" strokeType="INSIDE" width="358.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#868686" height="60.0" layoutX="1390.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="359.0">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Rectangle>
+      <Label fx:id="lblUser" alignment="CENTER" layoutX="1394.0" layoutY="58.0" prefHeight="44.0" prefWidth="349.0" text="{ USER }" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" alignment="CENTER" layoutX="1401.0" layoutY="121.0" prefHeight="36.0" prefWidth="340.0" text="Monday, 01/01/00">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" alignment="CENTER" layoutX="1401.0" layoutY="161.0" prefHeight="36.0" prefWidth="340.0" text="23:59:59">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets top="-1000.0" />
+   </padding>
+</Pane>
+>>>>>>> dd9fe8989801180427ee88e9a47ec64ae8723f54
